@@ -20,9 +20,12 @@
         return <h1>{title ? title : 'Default Title'}</h1>;
       }
       const HomePage = function() {
+        const initialValueOfLikes = 8;
+        const [likes, setLikes] = React.useState(initialValueOfLikes);
         const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
         const handleClick = function () {
           console.log('Increment the like count')
+          setLikes(likes + 1);
         }
         return (
           <div>
@@ -33,7 +36,7 @@
                 <li key={name}>{name}</li>
               ))}
             </ul>
-            <button onClick={handleClick}>Like</button>
+            <button onClick={handleClick}>Like({likes})</button>
           </div>
         );
       }
