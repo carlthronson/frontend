@@ -25,6 +25,11 @@
           <div>
             {/* Nesting the Header component */}
             <Header title="React 💙"/>
+            <ul>
+              {names.map((name) => (
+                <li>{name}</li>
+              ))}
+            </ul>
           </div>
         );
       }
