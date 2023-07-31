@@ -15,8 +15,9 @@
       const Header = function ({title}) {
         console.log(title)
         // Note the JSX syntax below
-        // Note the curly brackets around title
-        return (<h1>{title}</h1>)
+        // Note the curly brackets around the javascript code
+        // Note the javascript code within what looks like a regular html tag
+        return <h1>{title ? title : 'Default Title'}</h1>;
       }
       const HomePage = function() {
         return (
