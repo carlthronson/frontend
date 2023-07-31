@@ -12,9 +12,9 @@
     <div id="app"></div>
     <script type="text/jsx">
       const app = document.getElementById('app');
-      const Header = function (props) {
-        console.log(props)
-        return (<h1>{props.title}</h1>)
+      const Header = function ({title}) {
+        console.log(title)
+        return (<h1>{title}</h1>)
       }
       const HomePage = function() {
         return (
