@@ -15,7 +15,15 @@
       const Header = function () {
         return (<h1>Develop. Preview. Ship. 🚀</h1>)
       }
-      ReactDOM.render(<Header/>, app);
+      const HomePage = function() {
+        return (
+          <div>
+            {/* Nesting the Header component */}
+            <Header />
+          </div>
+        );
+      }
+      ReactDOM.render(<HomePage/>, app);
     </script>
   </body>
 
