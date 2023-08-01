@@ -10,7 +10,7 @@ const Header = function ({title}) {
 }
 const HomePage = function() {
   const initialValueOfLikes = 8;
-  const [likes, setLikes] = React.useState(initialValueOfLikes);
+  const [likes, setLikes] = useState(initialValueOfLikes);
   const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
   const handleClick = function () {
     console.log('Increment the like count')
