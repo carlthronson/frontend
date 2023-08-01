@@ -1,31 +1,31 @@
 <!-- index.html -->
 <div id="app"></div>
-  const app = document.getElementById('app');
-  const Header = function ({title}) {
-    console.log(title)
-    // Note the JSX syntax below
-    // Note the curly brackets around the javascript code
-    // Note the javascript code within what looks like a regular html tag
-    return <h1>{title ? title : 'Default Title'}</h1>;
+const app = document.getElementById('app');
+const Header = function ({title}) {
+  console.log(title)
+  // Note the JSX syntax below
+  // Note the curly brackets around the javascript code
+  // Note the javascript code within what looks like a regular html tag
+  return <h1>{title ? title : 'Default Title'}</h1>;
+}
+const HomePage = function() {
+  const initialValueOfLikes = 8;
+  const [likes, setLikes] = React.useState(initialValueOfLikes);
+  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+  const handleClick = function () {
+    console.log('Increment the like count')
+    setLikes(likes + 1);
   }
-  const HomePage = function() {
-    const initialValueOfLikes = 8;
-    const [likes, setLikes] = React.useState(initialValueOfLikes);
-    const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
-    const handleClick = function () {
-      console.log('Increment the like count')
-      setLikes(likes + 1);
-    }
-    return (
-      <div>
-        {/* Nesting the Header component */}
-        <Header title="React 💙"/>
-        <ul>
-          {names.map((name) => (
-            <li key={name}>{name}</li>
-          ))}
-        </ul>
-        <button onClick={handleClick}>Like({likes})</button>
-      </div>
-    );
-  }
+  return (
+    <div>
+      {/* Nesting the Header component */}
+      <Header title="React 💙"/>
+      <ul>
+        {names.map((name) => (
+          <li key={name}>{name}</li>
+        ))}
+      </ul>
+      <button onClick={handleClick}>Like({likes})</button>
+    </div>
+  );
+}
