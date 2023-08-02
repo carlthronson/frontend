@@ -5,7 +5,7 @@ function Header({ title }) {
 }
 
 export default function HomePage() {
-  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton', 'And me'];
 
   const [likes, setLikes] = useState(0);
 
