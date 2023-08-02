@@ -1,7 +1,9 @@
 {
     "//": "package.json",
     "scripts": {
-        "dev": "next dev"
+        "dev": "next dev",
+        "build": "next build && next export",
+        "start": "next start"
     },
     "dependencies": {
         "next": "^13.4.12",
