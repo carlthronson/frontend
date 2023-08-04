@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import Task from './Task';
 // import './scroll.css';
@@ -44,10 +45,11 @@ export default function Column({ title, tasks, id }) {
                 <TaskList
                     ref={provided.innerRef}
                     {...provided.droppableProps}
-                    isDraggingOver={snapshot.isDraggingOver}
+                    isdraggingover={snapshot.isDraggingOver}
 >
-                    {/* Provide your tasks */}
-                    <Task key='1' task={{id:123, title: 'Make a progress board'}} index='1' ></Task>
+            {tasks.map((task, index) => (
+              <Task key={index} index={index} task={task} />
+            ))}
                     {provided.placeholder}
                 </TaskList>
             )}
