@@ -6,8 +6,15 @@
         "start": "next start"
     },
     "dependencies": {
+        "ant": "^0.2.0",
+        "antd": "^5.8.2",
         "next": "^13.4.12",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-beautiful-dnd": "^13.1.1",
+        "react-dom": "^18.2.0",
+        "styled-components": "^6.0.7"
+    },
+    "devDependencies": {
+        "babel-plugin-styled-components": "^2.1.4"
     }
 }
