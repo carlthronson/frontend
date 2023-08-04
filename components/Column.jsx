@@ -1,5 +1,7 @@
+import styled from 'styled-components';
+import Task from './Task';
+// import './scroll.css';
 import { Droppable } from 'react-beautiful-dnd';
-import { styled } from 'styled-components';
 
 const Container = styled.div`
     background-color: #f4f5f7;
@@ -12,7 +14,7 @@ const Container = styled.div`
     border: 1px solid gray;
 `   ;
 
-const Title = styled.h2`
+const Title = styled.h3`
     padding: 8px;
     background-color: pink;
     text-align: center;
@@ -20,34 +22,35 @@ const Title = styled.h2`
 
 const TaskList = styled.div`
     padding: 3px;
-    transition: background-color 0.2s ease;
-    background-color: f4f5f7;
+  transistion: background-color 0.2s ease;
+  background-color: #f4f5f7;
     flex-grow: 1;
     min-height: 100px;
 `   ;
 
-const Task = styled.div``;
-
 export default function Column({ title, tasks, id }) {
-    return (<Container className='column'>
+    return (
+      <Container className='column'>
         <Title
             style={{
-                background: 'lightblue',
-                position: 'sticky'
-            }}>
+                backgroundColor: 'lightblue',
+                position: 'stick',
+            }}
+        >
             {title}
         </Title>
         <Droppable droppableId={id}>
-            {(provided, snapshot) => {
+            {(provided, snapshot) => (
                 <TaskList
                     ref={provided.innerRef}
                     {...provided.droppableProps}
-                    isDraggingOver={snapshot.isDraggingOver}>
+                    isDraggingOver={snapshot.isDraggingOver}
+>
                     {/* Provide your tasks */}
-                    <Title task={{id:123, title: 'Make a progress board'}} index='1' ></Title>
+                    <Task key='1' task={{id:123, title: 'Make a progress board'}} index='1' ></Task>
                     {provided.placeholder}
                 </TaskList>
-            }}
+            )}
         </Droppable>
     </Container>
     );
