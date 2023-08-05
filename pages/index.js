@@ -1,14 +1,14 @@
 // index.html
 import { useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import KanbanBoard from '../components/KanbanBoard';
-import Task from '../components/task';
+import KanbanBoard from '../components/Kanbanboard';
+import Task from '../components/Task';
 function Header({ title }) {
   return <h1>{title ? title : 'Default title'}</h1>;
 }
 
 export default function HomePage() {
-  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton', 'And me'];
+  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton', 'John Smith'];
 
   const [likes, setLikes] = useState(0);
 
