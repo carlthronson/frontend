@@ -1,8 +1,8 @@
 // index.html
 import { useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import KanbanBoard from '../components/KanbanBoard';
-import Task from '../components/task';
+import KanbanBoard from '../components/Kanbanboard';
+import Task from '../components/Task';
 function Header({ title }) {
   return <h1>{title ? title : 'Default title'}</h1>;
 }
