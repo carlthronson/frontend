@@ -3,9 +3,9 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import Column from './Column';
 
 export default function KanbanBoard() {
-    { /* State */ }
-    const [completed, setCompleted] = useState([]);
-    const [incomplete, setIncomplete] = useState([]);
+  { /* State */ }
+  const [completed, setCompleted] = useState([]);
+  const [incomplete, setIncomplete] = useState([]);
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/todos')
@@ -49,22 +49,22 @@ export default function KanbanBoard() {
     return array.filter((item) => item.id != id);
   }
 
-    return (
+  return (
     <DragDropContext onDragEnd={handleDragEnd}>
-            <h2 style={{ textAlign: 'center' }}>PROGRESS BOARD</h2>
+      <h2 style={{ textAlign: 'center' }}>PROGRESS BOARD</h2>
 
-            <div
-                style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    flexDirection: 'row',
-                }}
-            >
-                <Column title={'TO DO'} tasks={incomplete} id={'1'}/>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexDirection: 'row',
+        }}
+      >
+        <Column title={'TO DO'} tasks={incomplete} id={'1'} />
         <Column title={'DONE'} tasks={completed} id={'2'} />
         <Column title={'BACKLOG'} tasks={[]} id={'3'} />
-            </div>
-        </DragDropContext>
-    );
+      </div>
+    </DragDropContext>
+  );
 }
