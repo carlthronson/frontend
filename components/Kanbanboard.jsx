@@ -8,7 +8,7 @@ export default function KanbanBoard() {
   const [incomplete, setIncomplete] = useState([]);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/todos')
+    fetch('./tasks.json')
       .then((response) => response.json())
       .then((json) => {
         setCompleted(json.filter((task) => task.completed));
